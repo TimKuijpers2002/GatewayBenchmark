@@ -18,7 +18,7 @@ rpc GetAllToDo(GetAllToDoRequest) returns (GetAllToDoResponse) {};
 rpc UpdateToDo(UpdateToDoRequest) returns (UpdateToDoResponse) {};
 
 // Delete
-rpc ListToDo(DeleteToDoRequest) returns (DeleteToDoResponse) {};
+rpc DeleteToDo(DeleteToDoRequest) returns (DeleteToDoResponse) {};
 
 }
 
@@ -39,7 +39,7 @@ message ReadToDoResponse {
 	int32 id = 1;
 	string title = 2;
 	string description = 3;
-	string tatus = 4;
+	string status = 4;
 }
 
 message GetAllToDoRequest {}
