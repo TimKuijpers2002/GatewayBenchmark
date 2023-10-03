@@ -99,5 +99,27 @@ namespace GatewayBenchmark.Services
                 Id = toDoItem.Id
             });
         }
+
+        public override async Task<DeleteToDoResponse> DeleteToDo(DeleteToDoRequest request, ServerCallContext context)
+        {
+            if (request.Id <= 0)
+            {
+                throw new RpcException(new Status(StatusCode.InvalidArgument, "You must provide a valid input"));
+            }
+            var toDoItem = await _dbContext.ToDoItems.FirstOrDefaultAsync(t => t.Id == request.Id);
+
+            if (toDoItem == null)
+            {
+                throw new RpcException(new Status(StatusCode.NotFound, $"No task with id {request.Id}"));
+            }
+
+            _dbContext.ToDoItems.Remove(toDoItem);
+            await _dbContext.SaveChangesAsync();
+
+            return await Task.FromResult(new DeleteToDoResponse
+            {
+                Id = toDoItem.Id
+            });
+        }
     }
 }
