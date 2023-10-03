@@ -1,7 +1,7 @@
-using GatewayBenchmark;
+using GrpcService;
 using Grpc.Core;
 
-namespace GatewayBenchmark.Services
+namespace GrpcService.Services
 {
     public class GreeterService : Greeter.GreeterBase
     {

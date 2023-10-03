@@ -1,9 +1,9 @@
-﻿using GatewayBenchmark.Data;
-using GatewayBenchmark.Models;
+﻿using GrpcService.Data;
+using GrpcService.Models;
 using Grpc.Core;
 using Microsoft.EntityFrameworkCore;
 
-namespace GatewayBenchmark.Services
+namespace GrpcService.Services
 {
     public class ToDoService : ToDoIt.ToDoItBase
     {

@@ -1,4 +1,4 @@
-﻿namespace GatewayBenchmark.Models
+﻿namespace GrpcService.Models
 {
     public class ToDoItem
     {

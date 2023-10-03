@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace GatewayBenchmark.Migrations
+namespace GrpcService.Migrations
 {
     /// <inheritdoc />
-    public partial class inlaptop2 : Migration
+    public partial class inlaptop : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

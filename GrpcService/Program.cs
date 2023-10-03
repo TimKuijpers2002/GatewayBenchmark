@@ -1,5 +1,5 @@
-using GatewayBenchmark.Data;
-using GatewayBenchmark.Services;
+using GrpcService.Data;
+using GrpcService.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;

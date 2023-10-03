@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace GatewayBenchmark.Migrations
+namespace GrpcService.Migrations
 {
     /// <inheritdoc />
     public partial class Init : Migration

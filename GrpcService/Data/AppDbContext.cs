@@ -1,7 +1,7 @@
-﻿using GatewayBenchmark.Models;
+﻿using GrpcService.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace GatewayBenchmark.Data
+namespace GrpcService.Data
 {
     public class AppDbContext : DbContext
     {
