@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["GatewayBenchmark/GatewayBenchmark.csproj", "GatewayBenchmark/"]
-RUN dotnet restore "GatewayBenchmark/GatewayBenchmark.csproj"
+COPY ["GrpcService/GrpcService.csproj", "GrpcService/"]
+RUN dotnet restore "GrpcService/GrpcService.csproj"
 COPY . .
-WORKDIR "/src/GatewayBenchmark"
-RUN dotnet build "GatewayBenchmark.csproj" -c Release -o /app/build
+WORKDIR "/src/GrpcService"
+RUN dotnet build "GrpcService.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "GatewayBenchmark.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "GrpcService.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "GatewayBenchmark.dll"]
+ENTRYPOINT ["dotnet", "GrpcService.dll"]
